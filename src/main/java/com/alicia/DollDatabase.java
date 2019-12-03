@@ -24,13 +24,13 @@ public class DollDatabase {
         }
     }
 
-    public void addNewDoll(String doll) {
+    public void addNewDoll(String title, String type) {
 
         try (Connection connection = DriverManager.getConnection(DB_CONNECTION_URL);
-              PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO dolls values (?, ?) ")) {
+              PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO dolls ('title', 'type') values (?, ?) ")) {
 
-            preparedStatement.setString(1, String.title);
-            preparedStatement.setString(2, String.type);
+            preparedStatement.setString(1,title);
+            preparedStatement.setString(2, type);
             preparedStatement.executeUpdate();
 
         }catch (SQLException sqle) {
@@ -78,20 +78,20 @@ public class DollDatabase {
         return colTerms;
      }
 
-     public void updateDoll(String doll) {
+     public void updateDoll(String title, String type) {
 
-        String sql = "UPDATE vectors SET title = ?, WHERE type = ?";
+        String sql = "UPDATE dolls SET title = ?, WHERE type = ?";
 
          try (Connection connection = DriverManager.getConnection(DB_CONNECTION_URL);
               PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
 
-             preparedStatement.setString(1, doll.title);
-             preparedStatement.setString(2, doll.type);
+             preparedStatement.setString(1, title);
+             preparedStatement.setString(2, type);
 
              preparedStatement.executeUpdate();
 
          }catch (SQLException sqle) {
-             System.err.println("Error updating doll DB table for doll" + doll + "because" + sqle);
+             System.err.println("Error updating doll DB table for doll" + title + type + "because" + sqle);
          }
      }
 
