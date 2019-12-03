@@ -5,7 +5,7 @@ import java.util.Vector;
 
 public class DollDatabase {
 
-    private static final String DB_CONNECTION_URL = "jdbc:sqlite:dolls:sqlite";
+    private static final String DB_CONNECTION_URL = "jdbc:sqlite:dolls.sqlite";
 
     DollDatabase() {
 
