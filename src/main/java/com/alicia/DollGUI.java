@@ -55,7 +55,8 @@ public class DollGUI extends JFrame {
             }
         });
 
-         addButton.addActionListener(new ActionListener() {
+        addButton = new JButton("add");//initialized add Button
+        addButton.addActionListener(new ActionListener() {
              @Override
              public void actionPerformed(ActionEvent e) {
 
@@ -75,9 +76,7 @@ public class DollGUI extends JFrame {
                  addNewDolls();
                  displayAllDolls();
                  clearButton();
-
              }
-
          });
 
         doneButton.addActionListener(new ActionListener() {

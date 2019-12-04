@@ -95,15 +95,15 @@ public class DollDatabase {
          }
      }
 
-     public void deleteDoll(String name){
+     public void delete(String name){
 
-        String sql = "DELETE FROM dolls WHERE name = ?";
+        String dsql = "DELETE FROM dolls WHERE name = ?";
 
         try (Connection connection = DriverManager.getConnection(DB_CONNECTION_URL);
-             PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+             PreparedStatement dpreparedStatement = connection.prepareStatement(dsql)) {
 
-            preparedStatement.setString(1, name);
-            preparedStatement.executeUpdate();
+            dpreparedStatement.setString(1, name);
+            dpreparedStatement.execute();
 
         }catch (SQLException sqle) {
             System.err.println("Error deleting name from dolls table because of" + sqle);
