@@ -46,48 +46,48 @@ public class DollGUI extends JFrame {
 
         //addButton = new JButton("add");//initialized add Button
         addButton.addActionListener(new ActionListener() {
-             @Override
-             public void actionPerformed(ActionEvent e) {
+            @Override
+            public void actionPerformed(ActionEvent e) {
 
-                 String name = resultTextField.getText();
+                String name = resultTextField.getText();
 
-                 if(name.isEmpty()){
-                     resultLabel.setText("Doll name");
-                     return;
-                 }
+                if (name.isEmpty()) {
+                    resultLabel.setText("Doll name");
+                    return;
+                }
 
-                 String type = resultTextField.getText();
-                 if(type.isEmpty()){
-                     resultLabel.setText("Doll type");
-                     return;
-                 }
+                String type = resultTextField.getText();
+                if (type.isEmpty()) {
+                    resultLabel.setText("Doll type");
+                    return;
+                }
 
-                 addNewDolls();
-                 displayAllDolls();
-                 clearButton();
-                 searchButton();
-             }
-         });
+                addNewDolls();
+                displayAllDolls();
+                clearButton();
+                searchButton();
+            }
+        });
 
         searchButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-            searchButton();
+                searchButton();
             }
         });
 
         clearButton.addActionListener(new ActionListener() {
-             @Override
-             public void actionPerformed(ActionEvent e) {
-             clearButton();
-             }
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                clearButton();
+            }
         });
 
         doneButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 int end = JOptionPane.showConfirmDialog(DollGUI.this, "Would you like to end this search?",
-                     "Done", JOptionPane.OK_CANCEL_OPTION);
+                        "Done", JOptionPane.OK_CANCEL_OPTION);
                 if (end == JOptionPane.OK_OPTION) {
                     System.exit(0);
                 }
@@ -95,7 +95,7 @@ public class DollGUI extends JFrame {
         });
     }
 
-    private void configureTable(){
+    private void configureTable() {
 
         Vector columnTerms = db.getColumnTerms();//retrieving column terms from database
         Vector<Vector> features = db.getAllDolls();//save all dolls in vector list
@@ -114,9 +114,9 @@ public class DollGUI extends JFrame {
 
     private void addNewDolls() {
 
-            String dollName = dollNameTextField.getText();
-            String dollType = typeTextField.getText();
-           db.addNewDolls(dollName, dollType);
+        String dollName = dollNameTextField.getText();
+        String dollType = typeTextField.getText();
+        db.addNewDolls(dollName, dollType);
     }
 
     private void displayAllDolls() {
@@ -125,15 +125,15 @@ public class DollGUI extends JFrame {
         Vector<Vector> allDolls = db.getAllDolls();
         tableModel.setDataVector(allDolls, columnTerms);
 
-        }
+    }
 
-     private void searchButton(){// search for information in database for user
-       for (Vector row: dollTable.getTableModel()) {// will read row by row and store in doll table
-            String name = (String) row.get(0);//First row assigned to 0 for name and cast to string
-           String type = (String) row.get(1);//Second row indicated as 1 for type and cast to string
-           System.out.println(name + "is a doll with type" + type);
-       }
-     }
-}
+    private void searchButton() {// search for information in database for user
+       // for (Vector row : dollTable.getTableModel()) {// will read row by row and store in doll table
+           // String name = (String) row.get(0);//First row assigned to 0 for name and cast to string
+            //String type = (String) row.get(1);//Second row indicated as 1 for type and cast to string
+            //System.out.println(name + "is a doll with type" + type);
+        }
+    }
+
 
 
