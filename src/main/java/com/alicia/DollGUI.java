@@ -43,19 +43,7 @@ public class DollGUI extends JFrame {
         configureTable();//calling table to modify
         setVisible(true);
 
-        searchButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-                String name = resultTextField.getText();
-                resultLabel.setText("Doll name");
-
-                String type = resultTextField.getText();
-                resultLabel.setText("Doll type");
-            }
-        });
-
-        addButton = new JButton("add");//initialized add Button
+        //addButton = new JButton("add");//initialized add Button
         addButton.addActionListener(new ActionListener() {
              @Override
              public void actionPerformed(ActionEvent e) {
@@ -76,8 +64,23 @@ public class DollGUI extends JFrame {
                  addNewDolls();
                  displayAllDolls();
                  clearButton();
+                 searchButton();
              }
          });
+
+        searchButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+            searchButton();
+            }
+        });
+
+        clearButton.addActionListener(new ActionListener() {
+             @Override
+             public void actionPerformed(ActionEvent e) {
+             clearButton();
+             }
+        });
 
         doneButton.addActionListener(new ActionListener() {
             @Override
@@ -122,6 +125,14 @@ public class DollGUI extends JFrame {
         tableModel.setDataVector(allDolls, columnTerms);
 
         }
+
+     private void searchButton(){
+       for (Vector row: dollTable.getDataVector()) {
+           String name = (String) row.get(0);
+           String type = (String) row.get(1);
+           System.out.println(name + "is a doll with type" + type);
+       }
+     }
 }
 
 
