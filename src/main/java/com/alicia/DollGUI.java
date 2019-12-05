@@ -4,6 +4,7 @@ import javax.swing.*;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import javax.swing.table.DefaultTableModel;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Vector;
@@ -126,10 +127,10 @@ public class DollGUI extends JFrame {
 
         }
 
-     private void searchButton(){
-       for (Vector row: dollTable.getDataVector()) {
-           String name = (String) row.get(0);
-           String type = (String) row.get(1);
+     private void searchButton(){// search for information in database for user
+       for (Vector row: dollTable.getTableModel()) {// will read row by row and store in doll table
+            String name = (String) row.get(0);//First row assigned to 0 for name and cast to string
+           String type = (String) row.get(1);//Second row indicated as 1 for type and cast to string
            System.out.println(name + "is a doll with type" + type);
        }
      }
