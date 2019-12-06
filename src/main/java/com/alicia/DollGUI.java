@@ -18,7 +18,7 @@ public class DollGUI extends JFrame {
 
     private JPanel mainPanel;
     private JButton doneButton;
-    private JLabel resultLabel;
+    private String resultLabel;
     private JTextField dollNameTextField;
     private JButton searchButton;
     private JButton clearButton;
@@ -44,24 +44,24 @@ public class DollGUI extends JFrame {
         configureTable();//calling table to modify
         setVisible(true);
 
-        //addButton = new JButton("add");//initialized add Button
         addButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                String name = resultTextField.getText();
+                String name = dollNameTextField.getText();
 
                 if (name.isEmpty()) {
-                    resultLabel.setText("Doll name");
+                    resultLabel.setText(name);
                     return;
                 }
 
-                String type = resultTextField.getText();
+                String type = typeTextField.getText();
                 if (type.isEmpty()) {
-                    resultLabel.setText("Doll type");
+                    resultLabel.setText(type);
                     return;
                 }
 
+                resultTextField.setText(name + "" + type);
                 addNewDolls();
                 displayAllDolls();
                 clearButton();
@@ -100,23 +100,21 @@ public class DollGUI extends JFrame {
         Vector columnTerms = db.getColumnTerms();//retrieving column terms from database
         Vector<Vector> features = db.getAllDolls();//save all dolls in vector list
 
-        DefaultTableModel tableModel = new DefaultTableModel(features, columnTerms);
+        tableModel = new DefaultTableModel(features, columnTerms);
         dollTable.setModel(tableModel);//creating a model to store table model
-
     }
 
     public void clearButton() {
-
         dollNameTextField.setText("");
         typeTextField.setText("");
         resultTextField.setText("");
     }
 
     private void addNewDolls() {
-
         String dollName = dollNameTextField.getText();
         String dollType = typeTextField.getText();
         db.addNewDolls(dollName, dollType);
+
     }
 
     private void displayAllDolls() {

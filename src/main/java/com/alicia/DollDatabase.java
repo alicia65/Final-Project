@@ -15,7 +15,7 @@ public class DollDatabase {
              Statement statement = connection.createStatement()) {
 
             statement.execute("CREATE TABLE IF NOT EXISTS dolls" +
-                    "(id INTEGER PRIMARY KEY , name TEXT, type TEXT)");
+                    "( name TEXT, type TEXT)");
 
         }catch (SQLException sqle) {
             throw new RuntimeException(sqle);
@@ -24,7 +24,7 @@ public class DollDatabase {
 
     public void addNewDolls(String name, String type) {
 
-        String addNewDollSQL = "INSERT INTO dolls VALUE (?, ?)" ;
+        String addNewDollSQL = "INSERT INTO dolls VALUES (?, ?)" ;
 
         try (Connection connection = DriverManager.getConnection(DB_CONNECTION_URL);
               PreparedStatement addNewDollPs = connection.prepareStatement( addNewDollSQL)) {
@@ -43,12 +43,12 @@ public class DollDatabase {
         try (Connection connection = DriverManager.getConnection(DB_CONNECTION_URL);
              Statement statement = connection.createStatement()) {
 
-            ResultSet allDolls = statement.executeQuery(" SELECT * FROM dolls");//retrieve all dolls with names starting with "CH"
+            ResultSet allDolls = statement.executeQuery(" SELECT rowid, * FROM dolls");//retrieve all dolls with names starting with "CH"
 
             Vector<Vector> vectors = new Vector<>();
 
             while (allDolls.next()) {
-                int id = allDolls.getInt("id");
+                int id = allDolls.getInt("rowid");
                 String dollName = allDolls.getString("name");
                 String dollType = allDolls.getString("type");
 
