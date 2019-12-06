@@ -38,31 +38,31 @@ public class DollDatabase {
         }
     }
 
-    Vector<Vector> getAllDolls() {
+    Vector<Vector> getAllDolls() {//fetch all dolls
 
-        try (Connection connection = DriverManager.getConnection(DB_CONNECTION_URL);
+        try (Connection connection = DriverManager.getConnection(DB_CONNECTION_URL);//connecting to database
              Statement statement = connection.createStatement()) {
 
-            ResultSet allDolls = statement.executeQuery(" SELECT rowid, * FROM dolls");//retrieve all dolls with names starting with "CH"
+            ResultSet allDolls = statement.executeQuery(" SELECT rowid, * FROM dolls");//retrieve all rows from doll table
 
-            Vector<Vector> vectors = new Vector<>();
+            Vector<Vector> vectors = new Vector<>();//create a list of vector to store rows of dolls
 
-            while (allDolls.next()) {
-                int id = allDolls.getInt("rowid");
+            while (allDolls.next()) {//get to next row
+                int id = allDolls.getInt("rowid");//get id and store in allDolls variable
                 String dollName = allDolls.getString("name");
                 String dollType = allDolls.getString("type");
 
-                Vector v = new Vector();
-                v.add(id);
+                Vector v = new Vector();//generate object to store new columns
+                v.add(id);// use add() method to add column to variable v
                 v.add(dollName);
                 v.add(dollType);
 
-                vectors.add(v);
+                vectors.add(v);//add v to list called vectors
             }
-            return vectors;
+            return vectors;// return vectors
 
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new RuntimeException(e);//alert for any errors
         }
     }
 
@@ -97,13 +97,13 @@ public class DollDatabase {
 
      public void delete(String name){
 
-        String dsql = "DELETE FROM dolls WHERE name = ?";
+        String dsql = "DELETE FROM dolls WHERE name = ?";//sql delete command removes doll name from doll table.
 
         try (Connection connection = DriverManager.getConnection(DB_CONNECTION_URL);
-             PreparedStatement dpreparedStatement = connection.prepareStatement(dsql)) {
+             PreparedStatement dPreparedStatement = connection.prepareStatement(dsql)) {
 
-            dpreparedStatement.setString(1, name);
-            dpreparedStatement.execute();
+            dPreparedStatement.setString(1, name);
+            dPreparedStatement.execute();
 
         }catch (SQLException sqle) {
             System.err.println("Error deleting name from dolls table because of" + sqle);

@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6182fd12-a4b9-48df-819a-8bdfc5b5b41a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dolls.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/dolls.sqlite" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/alicia/DollDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alicia/DollDatabase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alicia/DollGUI.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alicia/DollGUI.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alicia/DollGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alicia/DollGUI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,7 +120,7 @@
       <workItem from="1575572092813" duration="62000" />
       <workItem from="1575576529658" duration="351000" />
       <workItem from="1575577141797" duration="2314000" />
-      <workItem from="1575592922959" duration="2836000" />
+      <workItem from="1575592922959" duration="3886000" />
     </task>
     <task id="LOCAL-00001" summary="Creating final project">
       <created>1575389670964</created>
@@ -196,7 +192,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575576557244</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Partially completed final project.">
+      <created>1575596096598</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1575596096598</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -233,10 +236,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="400" y="100" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog/0.0.1536.824@0.0.1536.824" timestamp="1575393138857" />
-    <state x="375" y="6" key="CommitChangelistDialog2" timestamp="1575576556175">
+    <state x="375" y="6" key="CommitChangelistDialog2" timestamp="1575596095506">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="375" y="6" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1575576556175" />
+    <state x="375" y="6" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1575596095506" />
     <state x="254" y="153" key="FileChooserDialogImpl" timestamp="1575576871023">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -257,10 +260,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="449" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1575578871344" />
-    <state x="361" y="133" key="Vcs.Push.Dialog.v2" timestamp="1575576560087">
+    <state x="361" y="133" key="Vcs.Push.Dialog.v2" timestamp="1575596098530">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="133" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1575576560087" />
+    <state x="361" y="133" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1575596098530" />
     <state x="129" y="47" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1575419238259">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
