@@ -18,7 +18,7 @@ public class DollGUI extends JFrame {
 
     private JPanel mainPanel;
     private JButton doneButton;
-    private String resultLabel;
+    private JLabel resultLabel;
     private JTextField dollNameTextField;
     private JButton searchButton;
     private JButton clearButton;
@@ -126,12 +126,12 @@ public class DollGUI extends JFrame {
     }
 
     private void searchButton() {// search for information in database for user
-       // for (Vector row : dollTable.getTableModel()) {// will read row by row and store in doll table
-           // String name = (String) row.get(0);//First row assigned to 0 for name and cast to string
-            //String type = (String) row.get(1);//Second row indicated as 1 for type and cast to string
-            //System.out.println(name + "is a doll with type" + type);
+        for (Vector row : dollTable.getTableModel()) {// will read row by row and store in doll table
+            String name = (String) row.get(0);//First row assigned to 0 for name and cast to string
+            String type = (String) row.get(1);//Second row indicated as 1 for type and cast to string
+            System.out.println(name + "is a doll with type" + type);
         }
     }
 
-
+}
 
