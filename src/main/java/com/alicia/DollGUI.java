@@ -162,23 +162,20 @@ public class DollGUI extends JFrame {
 
     private void searchButton() {// search for information in database
 
-        String dollName = "";
-        String dollType = "";
+        String dollName = new String();
+        String dollType = new String();
 
         if (dollName == String.valueOf(1)){
             resultTextField.getText();
             db.getColumnTerms();
 
-        }else if (dollType == String.valueOf(2)) {
-            resultTextField.getText();
+        }else if (dollType == String.valueOf(0)){
+            resultTextField.getUI();
             db.getColumnTerms();
 
         }else{
-            resultTextField.getUI();
+            searchButton.updateUI();
         }
-
-
-
     }
 }
 
