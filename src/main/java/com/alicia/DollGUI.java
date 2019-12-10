@@ -28,6 +28,8 @@ public class DollGUI extends JFrame {
     private JTextField resultTextField;
     private JButton addButton;
     private JTable dollTable;
+    private JButton updateButton;
+    private JButton deleteButton;
     private DefaultTableModel tableModel;
 
 
@@ -93,6 +95,22 @@ public class DollGUI extends JFrame {
                 }
             }
         });
+
+        updateButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                updateButton();
+                displayAllDolls();
+            }
+        });
+
+        deleteButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                deleteButton();
+                displayAllDolls();
+            }
+        });
     }
 
     private void configureTable() {
@@ -110,28 +128,46 @@ public class DollGUI extends JFrame {
         resultTextField.setText("");
     }
 
+    private void displayAllDolls() {
+        Vector columnTerms = db.getColumnTerms();
+        Vector<Vector> allDolls = db.getAllDolls();
+        tableModel.setDataVector(allDolls, columnTerms);
+    }
+
     private void addNewDolls() {
         String dollName = dollNameTextField.getText();
         String dollType = typeTextField.getText();
         db.addNewDolls(dollName, dollType);
-
+        addButton.updateUI();
     }
 
-    private void displayAllDolls() {
-
-        Vector columnTerms = db.getColumnTerms();
-        Vector<Vector> allDolls = db.getAllDolls();
-        tableModel.setDataVector(allDolls, columnTerms);
-
+    private void updateButton() {
+        String dollName = dollNameTextField.getText();
+        String dollType = typeTextField.getText();
+        db.updateDoll(dollName,dollType);
+        updateButton.updateUI();
     }
 
-    private void searchButton() {// search for information in database for user
-        for (Vector row : dollTable.getTableModel()) {// will read row by row and store in doll table
-            String name = (String) row.get(0);//First row assigned to 0 for name and cast to string
-            String type = (String) row.get(1);//Second row indicated as 1 for type and cast to string
-            System.out.println(name + "is a doll with type" + type);
+    private void deleteButton() {
+        String dollName = dollNameTextField.getText();
+        db.delete(dollName);
+    }
+
+    private void searchButton() {// search for information in database
+
+        String dollName = "";
+        String dollType = "";
+
+        if (dollName == dollType){
+            resultTextField.getText();
+            db.getColumnTerms();
+
+        }else {
+            resultTextField.getText();
         }
-    }
 
+    }
 }
+
+
 

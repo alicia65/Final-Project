@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6182fd12-a4b9-48df-819a-8bdfc5b5b41a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dolls.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/dolls.sqlite" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alicia/DollDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alicia/DollDatabase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/alicia/DollGUI.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alicia/DollGUI.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alicia/DollGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alicia/DollGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alicia/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alicia/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +58,7 @@
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH" value="4" />
+    <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH" value="267" />
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="181" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
@@ -121,7 +126,9 @@
       <workItem from="1575576529658" duration="351000" />
       <workItem from="1575577141797" duration="2314000" />
       <workItem from="1575592922959" duration="4018000" />
-      <workItem from="1575826832958" duration="1113000" />
+      <workItem from="1575826832958" duration="2962000" />
+      <workItem from="1575907877150" duration="1829000" />
+      <workItem from="1575992107147" duration="10356000" />
     </task>
     <task id="LOCAL-00001" summary="Creating final project">
       <created>1575389670964</created>
@@ -214,7 +221,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575828372291</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Partially completed final project.">
+      <created>1575828609156</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1575828609156</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -251,42 +265,42 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="400" y="100" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog/0.0.1536.824@0.0.1536.824" timestamp="1575393138857" />
-    <state x="375" y="6" key="CommitChangelistDialog2" timestamp="1575828370780">
+    <state x="375" y="6" key="CommitChangelistDialog2" timestamp="1575828608353">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="375" y="6" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1575828370780" />
+    <state x="375" y="6" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1575828608353" />
     <state x="254" y="153" key="FileChooserDialogImpl" timestamp="1575576871023">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="254" y="153" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1575576871023" />
-    <state width="1493" height="449" key="GridCell.Tab.0.bottom" timestamp="1575578871344">
+    <state width="1493" height="133" key="GridCell.Tab.0.bottom" timestamp="1576002546138">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="449" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1575578871344" />
-    <state width="1493" height="449" key="GridCell.Tab.0.center" timestamp="1575578871344">
+    <state width="1493" height="133" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1576002546138" />
+    <state width="1493" height="133" key="GridCell.Tab.0.center" timestamp="1576002546138">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="449" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1575578871344" />
-    <state width="1493" height="449" key="GridCell.Tab.0.left" timestamp="1575578871344">
+    <state width="1493" height="133" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1576002546138" />
+    <state width="1493" height="133" key="GridCell.Tab.0.left" timestamp="1576002546138">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="449" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1575578871344" />
-    <state width="1493" height="449" key="GridCell.Tab.0.right" timestamp="1575578871344">
+    <state width="1493" height="133" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1576002546138" />
+    <state width="1493" height="133" key="GridCell.Tab.0.right" timestamp="1576002546138">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="449" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1575578871344" />
-    <state x="361" y="133" key="Vcs.Push.Dialog.v2" timestamp="1575828378295">
+    <state width="1493" height="133" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1576002546138" />
+    <state x="361" y="133" key="Vcs.Push.Dialog.v2" timestamp="1575828614167">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="133" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1575828378295" />
+    <state x="361" y="133" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1575828614167" />
     <state x="129" y="47" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1575419238259">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="129" y="47" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1536.824@0.0.1536.824" timestamp="1575419238259" />
-    <state x="102" y="235" key="com.intellij.ide.util.TipDialog" timestamp="1575826833560">
+    <state x="102" y="235" key="com.intellij.ide.util.TipDialog" timestamp="1576010468842">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="102" y="235" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1575826833560" />
+    <state x="102" y="235" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1576010468842" />
     <state x="578" y="328" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1575393335704">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -295,6 +309,14 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="209" y="32" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1575391912222" />
+    <state x="475" y="30" key="refactoring.ChangeSignatureDialog" timestamp="1575997102713">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="475" y="30" key="refactoring.ChangeSignatureDialog/0.0.1536.824@0.0.1536.824" timestamp="1575997102713" />
+    <state x="425" y="187" key="run.anything.popup" timestamp="1575995237788">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1575995237788" />
     <state x="54" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1575426397480">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

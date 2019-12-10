@@ -77,16 +77,16 @@ public class DollDatabase {
         return colTerms;
      }
 
-     private void updateDoll(String name, String type) {//update database after making changes
+     public void updateDoll(String name, String type) {//update database after making changes
 
-        String sql = "UPDATE dolls SET name = ?, WHERE type = ?";//Update changes in database
+        String sql = "UPDATE dolls SET type = ? WHERE name = ?";//Update changes in database
 
          try (Connection connection = DriverManager.getConnection(DB_CONNECTION_URL);
               PreparedStatement preparedStatement = connection.prepareStatement(sql)) {//protecting database for getting destroy
              //database
 
-             preparedStatement.setString(1, name);//
-             preparedStatement.setString(2, type);
+             preparedStatement.setString(1, type);//
+             preparedStatement.setString(2, name);
 
              preparedStatement.executeUpdate();
 
