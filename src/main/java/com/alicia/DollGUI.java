@@ -12,7 +12,9 @@ import java.util.Vector;
 import static input.InputUtils.stringInput;
 
 /**
- * Created by Alicia on 12/2/19.
+ * Created by Alicia on 12/10/19.
+ * Class JAVA 2505.
+ *
  */
 public class DollGUI extends JFrame {
 
@@ -43,6 +45,11 @@ public class DollGUI extends JFrame {
         pack();//insert the items to the window
         setTitle("Doll Database Application");//display title as string
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);//disconnect the program by shutting off this window
+
+
+
+
+
         configureTable();//calling table to modify
         setVisible(true);
 
@@ -158,13 +165,19 @@ public class DollGUI extends JFrame {
         String dollName = "";
         String dollType = "";
 
-        if (dollName == dollType){
+        if (dollName == String.valueOf(1)){
             resultTextField.getText();
             db.getColumnTerms();
 
-        }else {
+        }else if (dollType == String.valueOf(2)) {
             resultTextField.getText();
+            db.getColumnTerms();
+
+        }else{
+            resultTextField.getUI();
         }
+
+
 
     }
 }

@@ -1,5 +1,10 @@
 package com.alicia;
 
+
+/**
+ * Created by Alicia on 12/10/2019.
+ */
+
 import java.sql.*;
 import java.util.Vector;
 
@@ -7,7 +12,7 @@ import static input.InputUtils.stringInput;
 
 public class DollDatabase {
 
-    private static final String DB_CONNECTION_URL = "jdbc:sqlite:dolls.sqlite";
+    private static final String DB_CONNECTION_URL = "jdbc:sqlite:dolls.sqlite";//connect to url
 
     DollDatabase() {
 
@@ -15,16 +20,16 @@ public class DollDatabase {
              Statement statement = connection.createStatement()) {
 
             statement.execute("CREATE TABLE IF NOT EXISTS dolls" +
-                    "( name TEXT, type TEXT)");
+                    "( name TEXT, type TEXT)");//create and execute doll table with two columns: name and type
 
         }catch (SQLException sqle) {
             throw new RuntimeException(sqle);
         }
     }
 
-    public void addNewDolls(String name, String type) {
+    public void addNewDolls(String name, String type) {// add new dolls to database
 
-        String addNewDollSQL = "INSERT INTO dolls VALUES (?, ?)" ;
+        String addNewDollSQL = "INSERT INTO dolls VALUES (?, ?)" ;//add new information to doll table
 
         try (Connection connection = DriverManager.getConnection(DB_CONNECTION_URL);
               PreparedStatement addNewDollPs = connection.prepareStatement( addNewDollSQL)) {
