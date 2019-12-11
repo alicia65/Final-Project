@@ -114,7 +114,9 @@ public class DollDatabase {
             System.err.println("Error deleting name from dolls table because of" + sqle);
         }
 
+    }//public  void search (String name, String type){
+
+        //String sql = "SELECT * FROM dolls"
     }
 
- }
 

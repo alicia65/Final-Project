@@ -5,6 +5,7 @@ import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import javax.swing.table.DefaultTableModel;
 
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Vector;
@@ -42,6 +43,7 @@ public class DollGUI extends JFrame {
         this.db = db; //object this has db variable which contains db value.
 
         setContentPane(mainPanel);//address about the window's details in mainPanel
+        setPreferredSize(new Dimension(500, 500));
         pack();//insert the items to the window
         setTitle("Doll Database Application");//display title as string
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);//disconnect the program by shutting off this window
