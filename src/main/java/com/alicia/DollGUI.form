@@ -8,17 +8,6 @@
     <properties/>
     <border type="none"/>
     <children>
-      <component id="d8559" class="javax.swing.JTable" binding="dollTable">
-        <constraints>
-          <grid row="0" column="7" row-span="9" col-span="3" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
-            <preferred-size width="150" height="50"/>
-          </grid>
-        </constraints>
-        <properties>
-          <showHorizontalLines value="true"/>
-          <showVerticalLines value="true"/>
-        </properties>
-      </component>
       <component id="6117b" class="javax.swing.JTextField" binding="dollNameTextField">
         <constraints>
           <grid row="1" column="2" row-span="3" col-span="4" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
@@ -27,7 +16,7 @@
         </constraints>
         <properties/>
       </component>
-      <component id="a71fc" class="javax.swing.JLabel" binding="nameLable">
+      <component id="a71fc" class="javax.swing.JLabel" binding="nameLabel">
         <constraints>
           <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -44,7 +33,7 @@
         </constraints>
         <properties/>
       </component>
-      <component id="3eecf" class="javax.swing.JLabel" binding="typeLable">
+      <component id="3eecf" class="javax.swing.JLabel" binding="typeLabel">
         <constraints>
           <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -119,6 +108,24 @@
           <text value="Delete"/>
         </properties>
       </component>
+      <scrollpane id="c9c0e">
+        <constraints>
+          <grid row="0" column="7" row-span="9" col-span="3" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <component id="d8559" class="javax.swing.JTable" binding="dollTable">
+            <constraints/>
+            <properties>
+              <autoCreateRowSorter value="false"/>
+              <fillsViewportHeight value="true"/>
+              <showHorizontalLines value="false"/>
+              <showVerticalLines value="false"/>
+            </properties>
+          </component>
+        </children>
+      </scrollpane>
     </children>
   </grid>
 </form>

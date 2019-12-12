@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6182fd12-a4b9-48df-819a-8bdfc5b5b41a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/alicia/DollDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alicia/DollDatabase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alicia/DollGUI.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alicia/DollGUI.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/alicia/DollGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alicia/DollGUI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -129,7 +129,8 @@
       <workItem from="1575992107147" duration="10356000" />
       <workItem from="1576010460984" duration="7601000" />
       <workItem from="1576078694194" duration="4480000" />
-      <workItem from="1576092978663" duration="6099000" />
+      <workItem from="1576092978663" duration="17574000" />
+      <workItem from="1576169399978" duration="9937000" />
     </task>
     <task id="LOCAL-00001" summary="Creating final project">
       <created>1575389670964</created>
@@ -250,7 +251,21 @@
       <option name="project" value="LOCAL" />
       <updated>1576018979212</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Partially completed final project.">
+      <created>1576105144237</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1576105144237</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Partially completed final project with README.md.">
+      <created>1576105366468</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1576105366468</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -260,7 +275,8 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Creating final project" />
     <MESSAGE value="Partially completed final project." />
-    <option name="LAST_COMMIT_MESSAGE" value="Partially completed final project." />
+    <MESSAGE value="Partially completed final project with README.md." />
+    <option name="LAST_COMMIT_MESSAGE" value="Partially completed final project with README.md." />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="70" width="814" height="732" key="#Intentions" timestamp="1575427031295">
@@ -275,10 +291,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="6" y="64" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1575419250405" />
-    <state x="574" y="127" key="#com.intellij.ide.util.MemberChooser" timestamp="1575412737702">
+    <state x="574" y="127" key="#com.intellij.ide.util.MemberChooser" timestamp="1576119804581">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="574" y="127" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1575412737702" />
+    <state x="574" y="127" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1576119804581" />
     <state x="121" y="187" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1575353984657">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -287,42 +303,42 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="400" y="100" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog/0.0.1536.824@0.0.1536.824" timestamp="1575393138857" />
-    <state x="375" y="6" key="CommitChangelistDialog2" timestamp="1576105143362">
+    <state x="375" y="6" key="CommitChangelistDialog2" timestamp="1576105365731">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="375" y="6" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1576105143362" />
+    <state x="375" y="6" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1576105365731" />
     <state x="254" y="153" key="FileChooserDialogImpl" timestamp="1575576871023">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="254" y="153" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1575576871023" />
-    <state width="801" height="74" key="GridCell.Tab.0.bottom" timestamp="1576093388517">
+    <state width="746" height="71" key="GridCell.Tab.0.bottom" timestamp="1576180209699">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="801" height="74" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1576093388517" />
-    <state width="801" height="74" key="GridCell.Tab.0.center" timestamp="1576093388516">
+    <state width="746" height="71" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1576180209699" />
+    <state width="746" height="71" key="GridCell.Tab.0.center" timestamp="1576180209699">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="801" height="74" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1576093388516" />
-    <state width="801" height="74" key="GridCell.Tab.0.left" timestamp="1576093388516">
+    <state width="746" height="71" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1576180209699" />
+    <state width="746" height="71" key="GridCell.Tab.0.left" timestamp="1576180209698">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="801" height="74" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1576093388516" />
-    <state width="801" height="74" key="GridCell.Tab.0.right" timestamp="1576093388516">
+    <state width="746" height="71" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1576180209698" />
+    <state width="746" height="71" key="GridCell.Tab.0.right" timestamp="1576180209699">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="801" height="74" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1576093388516" />
-    <state x="361" y="133" key="Vcs.Push.Dialog.v2" timestamp="1576105148172">
+    <state width="746" height="71" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1576180209699" />
+    <state x="361" y="133" key="Vcs.Push.Dialog.v2" timestamp="1576105369157">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="133" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1576105148172" />
+    <state x="361" y="133" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1576105369157" />
     <state x="129" y="47" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1575419238259">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="129" y="47" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1536.824@0.0.1536.824" timestamp="1575419238259" />
-    <state x="102" y="235" key="com.intellij.ide.util.TipDialog" timestamp="1576078704354">
+    <state x="102" y="235" key="com.intellij.ide.util.TipDialog" timestamp="1576169405898">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="102" y="235" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1576078704354" />
+    <state x="102" y="235" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1576169405898" />
     <state x="578" y="328" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1575393335704">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -331,17 +347,17 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="209" y="32" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1575391912222" />
-    <state x="475" y="30" key="refactoring.ChangeSignatureDialog" timestamp="1575997102713">
+    <state x="475" y="30" key="refactoring.ChangeSignatureDialog" timestamp="1576115962796">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="475" y="30" key="refactoring.ChangeSignatureDialog/0.0.1536.824@0.0.1536.824" timestamp="1575997102713" />
+    <state x="475" y="30" key="refactoring.ChangeSignatureDialog/0.0.1536.824@0.0.1536.824" timestamp="1576115962796" />
     <state x="425" y="187" key="run.anything.popup" timestamp="1575995237788">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1575995237788" />
-    <state x="54" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1575426397480">
+    <state x="54" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1576173061655">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="54" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1575426397480" />
+    <state x="54" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1576173061654" />
   </component>
 </project>

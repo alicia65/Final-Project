@@ -1,16 +1,13 @@
 package com.alicia;
 
+import javax.accessibility.AccessibleTableModelChange;
 import javax.swing.*;
-import javax.swing.event.DocumentEvent;
-import javax.swing.event.DocumentListener;
 import javax.swing.table.DefaultTableModel;
-
+import javax.swing.table.TableColumnModel;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.*;
 import java.util.Vector;
 
-import static input.InputUtils.stringInput;
 
 /**
  * Created by Alicia on 12/10/19.
@@ -19,14 +16,15 @@ import static input.InputUtils.stringInput;
  */
 public class DollGUI extends JFrame {
 
+    private final String title = new String();
     private JPanel mainPanel;
     private JButton doneButton;
     private JLabel resultLabel;
     private JTextField dollNameTextField;
     private JButton searchButton;
     private JButton clearButton;
-    private JLabel nameLable;
-    private JLabel typeLable;
+    private JLabel nameLabel;
+    private JLabel typeLabel;
     private JTextField typeTextField;
     private JTextField resultTextField;
     private JButton addButton;
@@ -34,56 +32,63 @@ public class DollGUI extends JFrame {
     private JButton updateButton;
     private JButton deleteButton;
     private DefaultTableModel tableModel;
-
-
     private DollDatabase db;
 
     DollGUI(DollDatabase db) {//constructor called DollGUI contains DollDatabase parameter
 
         this.db = db; //object this has db variable which contains db value.
-
         setContentPane(mainPanel);//address about the window's details in mainPanel
         setPreferredSize(new Dimension(500, 500));
         pack();//insert the items to the window
         setTitle("Doll Database Application");//display title as string
-        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);//disconnect the program by shutting off this window
-
-
-
-
-
-        configureTable();//calling table to modify
+        setLocationRelativeTo(null);
+        setTitle(title);
         setVisible(true);
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);//disconnect the program by shutting off this window
+        configureTable();//calling table to modify
 
         addButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
 
+                String input = JOptionPane.showInputDialog(DollGUI.this,
+                        "Enter the doll name", "Title", JOptionPane.INFORMATION_MESSAGE);
                 String name = dollNameTextField.getText();
 
-                if (name.isEmpty()) {
-                    resultLabel.setText(name);
-                    return;
-                }
+                try {
+                    if (name.trim().length()== 0){
+                        resultLabel.setText("Doll name is");
+                        return;
+                    }
 
-                String type = typeTextField.getText();
-                if (type.isEmpty()) {
-                    resultLabel.setText(type);
-                    return;
-                }
+                    String input = JOptionPane.showInputDialog(DollGUI.this,
+                            "Enter the doll type", "Title", JOptionPane.INFORMATION_MESSAGE);
+                    String type = typeTextField.getText();
+                    if (type.trim().length()== 0) {
+                        resultLabel.setText(" Doll type is");
+                        return;
+                    }
+                    resultTextField.setText(name + "" + type);
 
-                resultTextField.setText(name + "" + type);
+                }catch (NumberFormatException nfe) {
+                    JOptionPane.showMessageDialog(DollGUI.this,
+                     "Please enter only letters(no numbers");// set up validation by requesting users to enter letters only
+                }
                 addNewDolls();
                 displayAllDolls();
                 clearButton();
                 searchButton();
+                //setTitle( name, type);
             }
         });
 
         searchButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                searchButton();
+                if (typeTextField.getText().endsWith("")) {
+                    resultTextField.getText();
+                    searchButton();
+                }
             }
         });
 
@@ -110,6 +115,7 @@ public class DollGUI extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 updateButton();
                 displayAllDolls();
+                //makeChangeToTable(e);
             }
         });
 
@@ -121,6 +127,13 @@ public class DollGUI extends JFrame {
             }
         });
     }
+
+    //private void setTitle(String name, String type) {//creating title for columns
+        //JTable table = new JTable(vectors, colTerms);
+        //JScrollPane scrollPane = new JScrollPane(table);
+        //table.setFillsViewportHeight(true);
+       //}
+
 
     private void configureTable() {
 
@@ -162,24 +175,18 @@ public class DollGUI extends JFrame {
         db.delete(dollName);
     }
 
+    private void makeChangeToTable(AccessibleTableModelChange e) {
+
+        int rowId = e.getFirstRow();
+        //TableColumnModel  columnModel = (TableColumnModel) e.getFirstColumn();
+       // String columnName = columnModel.
+        //String columnType =
+    }
     private void searchButton() {// search for information in database
 
-        String dollName = new String();
-        String dollType = new String();
 
-        if (dollName == String.valueOf(1)){
-            resultTextField.getText();
-            db.getColumnTerms();
-
-        }else if (dollType == String.valueOf(0)){
-            resultTextField.getUI();
-            db.getColumnTerms();
-
-        }else{
             searchButton.updateUI();
-        }
     }
 }
-
 
 

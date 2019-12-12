@@ -43,7 +43,7 @@ public class DollDatabase {
         }
     }
 
-    Vector<Vector> getAllDolls() {//fetch all dolls
+    Vector<Vector> getAllDolls() {//search all dolls
 
         try (Connection connection = DriverManager.getConnection(DB_CONNECTION_URL);//connecting to database
              Statement statement = connection.createStatement()) {
@@ -71,6 +71,21 @@ public class DollDatabase {
         }
     }
 
+    private  static void searchDoll() {
+
+        final String searchSql = "SELECT * FROM dolls WHERE name, type like ? ,?";
+        try(Connection connection = DriverManager.getConnection(DB_CONNECTION_URL);
+            PreparedStatement searchDollStateM = connection.prepareStatement(searchSql)) {
+
+            String searchForName = stringInput("Enter doll name to search for");
+            String  searchForType = stringInput("Enter doll type to search");
+
+            searchDollStateM.setString(1, searchForName);
+            searchDollStateM.setString(2, searchForType);
+            ResultSet dollsRs = searchDollStateM.executeQuery();
+        }
+    }
+
      Vector getColumnTerms() {
 
         Vector<String> colTerms = new Vector<>();//creating vector to save three columns
@@ -90,7 +105,7 @@ public class DollDatabase {
               PreparedStatement preparedStatement = connection.prepareStatement(sql)) {//protecting database for getting destroy
              //database
 
-             preparedStatement.setString(1, type);//
+             preparedStatement.setString(1, type);
              preparedStatement.setString(2, name);
 
              preparedStatement.executeUpdate();
@@ -100,23 +115,21 @@ public class DollDatabase {
          }
      }
 
-     public void delete(String name){
+     public void delete(String name) {
 
-        String dsql = "DELETE FROM dolls WHERE name = ?";//sql delete command removes doll name from doll table.
+         String dsql = "DELETE FROM dolls WHERE name = ?";//sql delete command removes doll name from doll table.
 
-        try (Connection connection = DriverManager.getConnection(DB_CONNECTION_URL);
-             PreparedStatement dPreparedStatement = connection.prepareStatement(dsql)) {
+         try (Connection connection = DriverManager.getConnection(DB_CONNECTION_URL);
+              PreparedStatement dPreparedStatement = connection.prepareStatement(dsql)) {
 
-            dPreparedStatement.setString(1, name);
-            dPreparedStatement.execute();
+             dPreparedStatement.setString(1, name);
+             dPreparedStatement.execute();
 
-        }catch (SQLException sqle) {
-            System.err.println("Error deleting name from dolls table because of" + sqle);
-        }
+         } catch (SQLException sqle) {
+             System.err.println("Error deleting name from dolls table because of" + sqle);
+         }
+     }
 
-    }//public  void search (String name, String type){
-
-        //String sql = "SELECT * FROM dolls"
     }
 
 
