@@ -2,10 +2,12 @@ package com.alicia;
 
 
 /**
- * Created by Alicia on 12/10/2019.
+ * Created by Alicia on 12/12/2019.
  */
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Vector;
 
 import static input.InputUtils.stringInput;
@@ -71,18 +73,31 @@ public class DollDatabase {
         }
     }
 
-    private  static void searchDoll() {
+    public void searchDoll(String searchNInput, String searchTInput) {//Using search button to search for dolls in database
 
-        final String searchSql = "SELECT * FROM dolls WHERE name, type like ? ,?";
+        String findSql = "SELECT * FROM dolls WHERE equalsIgnorcase(name, type) like equalsIgnorecase(? ,?)";
+
         try(Connection connection = DriverManager.getConnection(DB_CONNECTION_URL);
-            PreparedStatement searchDollStateM = connection.prepareStatement(searchSql)) {
+            PreparedStatement preparedStatement = connection.prepareStatement(findSql)) {
 
-            String searchForName = stringInput("Enter doll name to search for");
-            String  searchForType = stringInput("Enter doll type to search");
+            String findName = stringInput("Enter name to find");//Asking user to supple doll name for searching
+            String findType = stringInput("Enter type to find");// Getting input from user regarding to doll type
 
-            searchDollStateM.setString(1, searchForName);
-            searchDollStateM.setString(2, searchForType);
-            ResultSet dollsRs = searchDollStateM.executeQuery();
+            preparedStatement.setString(1, "%" + findName + "%");
+            preparedStatement.setString(2, "%" + findType + "%");
+            ResultSet dollsRs = preparedStatement.executeQuery();
+
+            List<String> dolls = new ArrayList<>();//Creating array list to save doll names and types
+
+            while (dollsRs.next()) {//getting next doll while true
+                String name = dollsRs.getString("name"); //Getting string name and sending via result set
+                String type = dollsRs.getString("type");
+                String doll = new String(name, type);
+                dolls.add(doll);//adding found dolls to doll list
+            }
+
+        }catch(SQLException e){
+            throw  new RuntimeException(e);
         }
     }
 
@@ -129,7 +144,6 @@ public class DollDatabase {
              System.err.println("Error deleting name from dolls table because of" + sqle);
          }
      }
-
-    }
+}
 
 

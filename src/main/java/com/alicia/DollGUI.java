@@ -1,32 +1,24 @@
 package com.alicia;
 
-import javax.accessibility.AccessibleTableModelChange;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableColumnModel;
 import java.awt.*;
 import java.awt.event.*;
+import java.util.List;
 import java.util.Vector;
 
 
 /**
- * Created by Alicia on 12/10/19.
+ * Created by Alicia on 12/12/19.
  * Class JAVA 2505.
  *
  */
 public class DollGUI extends JFrame {
 
-    private final String title = new String();
     private JPanel mainPanel;
     private JButton doneButton;
     private JLabel resultLabel;
-    private JTextField dollNameTextField;
     private JButton searchButton;
-    private JButton clearButton;
-    private JLabel nameLabel;
-    private JLabel typeLabel;
-    private JTextField typeTextField;
-    private JTextField resultTextField;
     private JButton addButton;
     private JTable dollTable;
     private JButton updateButton;
@@ -38,11 +30,10 @@ public class DollGUI extends JFrame {
 
         this.db = db; //object this has db variable which contains db value.
         setContentPane(mainPanel);//address about the window's details in mainPanel
-        setPreferredSize(new Dimension(500, 500));
+        setPreferredSize(new Dimension(1000, 500));
         pack();//insert the items to the window
         setTitle("Doll Database Application");//display title as string
         setLocationRelativeTo(null);
-        setTitle(title);
         setVisible(true);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);//disconnect the program by shutting off this window
         configureTable();//calling table to modify
@@ -51,51 +42,58 @@ public class DollGUI extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                String input = JOptionPane.showInputDialog(DollGUI.this,
-                        "Enter the doll name", "Title", JOptionPane.INFORMATION_MESSAGE);
-                String name = dollNameTextField.getText();
+                String dollNameInput = JOptionPane.showInputDialog(DollGUI.this,
+                        "Enter the doll name", "Add doll name", JOptionPane.INFORMATION_MESSAGE);
 
-                try {
-                    if (name.trim().length()== 0){
+                if (dollNameInput.trim().length()== 0){
                         resultLabel.setText("Doll name is");
                         return;
                     }
 
-                    String input = JOptionPane.showInputDialog(DollGUI.this,
-                            "Enter the doll type", "Title", JOptionPane.INFORMATION_MESSAGE);
-                    String type = typeTextField.getText();
-                    if (type.trim().length()== 0) {
+                String dollTypeInput = JOptionPane.showInputDialog(DollGUI.this,
+                            "Enter the doll type", "Add doll type", JOptionPane.INFORMATION_MESSAGE);
+
+                if (dollTypeInput.trim().length()== 0) {
                         resultLabel.setText(" Doll type is");
                         return;
                     }
-                    resultTextField.setText(name + "" + type);
 
-                }catch (NumberFormatException nfe) {
-                    JOptionPane.showMessageDialog(DollGUI.this,
-                     "Please enter only letters(no numbers");// set up validation by requesting users to enter letters only
-                }
-                addNewDolls();
+                addNewDolls(dollNameInput, dollTypeInput);
                 displayAllDolls();
-                clearButton();
-                searchButton();
-                //setTitle( name, type);
+                db.searchDoll(dollNameInput, dollTypeInput);
             }
         });
 
         searchButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (typeTextField.getText().endsWith("")) {
-                    resultTextField.getText();
-                    searchButton();
-                }
-            }
-        });
 
-        clearButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                clearButton();
+             String searchNInput = JOptionPane.showInputDialog(DollGUI.this, "Enter doll name",
+                     "Find doll name ", JOptionPane.INFORMATION_MESSAGE);//showing search message to user
+                List<String> same = db.search(searchNInput);//search string name and store in same variable
+
+                if (same.isEmpty()) {//checking for doll name in database
+                    resultLabel.setText(" No doll names found" + same);//display no doll names by this name exist
+                }else {
+                    resultLabel.setText("List of matching doll names found:"); //display found names
+                    for (String dollName : same) {//checking each name in database
+                        resultLabel.setText(dollName);// looking for doll name
+                    }
+                }
+
+                String searchTInput = JOptionPane.showInputDialog(DollGUI.this, "Enter doll type ",
+                     "Find doll type",JOptionPane.INFORMATION_MESSAGE);
+                List<String> alike = db.search(searchTInput);
+
+                 if (alike.isEmpty()) {
+                     resultLabel.setText("No doll types found" + alike);
+                 }else {
+                     resultLabel.setText(("List of matching doll types found:"));
+                     for (String dollType: alike) {
+                         resultLabel.setText(dollType);
+                     }
+                     searchButton();//call search button to retrieve doll types
+                }
             }
         });
 
@@ -103,8 +101,8 @@ public class DollGUI extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 int end = JOptionPane.showConfirmDialog(DollGUI.this, "Would you like to end this search?",
-                        "Done", JOptionPane.OK_CANCEL_OPTION);
-                if (end == JOptionPane.OK_OPTION) {
+                        "Done", JOptionPane.OK_CANCEL_OPTION);//Asking user for confirmation before leaving doll database application
+                if (end == JOptionPane.OK_OPTION) {//closing program when user selected ok button
                     System.exit(0);
                 }
             }
@@ -113,27 +111,19 @@ public class DollGUI extends JFrame {
         updateButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                updateButton();
-                displayAllDolls();
-                //makeChangeToTable(e);
+                displayAllDolls();//show and update all dolls
             }
         });
 
         deleteButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                deleteButton();
+                String dollName = null;
+                deleteButton(dollName);
                 displayAllDolls();
             }
         });
     }
-
-    //private void setTitle(String name, String type) {//creating title for columns
-        //JTable table = new JTable(vectors, colTerms);
-        //JScrollPane scrollPane = new JScrollPane(table);
-        //table.setFillsViewportHeight(true);
-       //}
-
 
     private void configureTable() {
 
@@ -144,48 +134,30 @@ public class DollGUI extends JFrame {
         dollTable.setModel(tableModel);//creating a model to store table model
     }
 
-    public void clearButton() {
-        dollNameTextField.setText("");
-        typeTextField.setText("");
-        resultTextField.setText("");
-    }
-
     private void displayAllDolls() {
         Vector columnTerms = db.getColumnTerms();
         Vector<Vector> allDolls = db.getAllDolls();
         tableModel.setDataVector(allDolls, columnTerms);
     }
 
-    private void addNewDolls() {
-        String dollName = dollNameTextField.getText();
-        String dollType = typeTextField.getText();
-        db.addNewDolls(dollName, dollType);
+    private void addNewDolls(String dollName, String dollType) {//adding new dolls to database
+        db.addNewDolls(dollName, dollType);//Adding new doll information by user
         addButton.updateUI();
     }
 
-    private void updateButton() {
-        String dollName = dollNameTextField.getText();
-        String dollType = typeTextField.getText();
+    private void updateButton(String dollName, String dollType) {
         db.updateDoll(dollName,dollType);
         updateButton.updateUI();
     }
 
-    private void deleteButton() {
-        String dollName = dollNameTextField.getText();
-        db.delete(dollName);
+    private void deleteButton(String dollName) {
+        db.delete(dollName);//deleting unwanted doll name in database
+        deleteButton.updateUI();
     }
 
-    private void makeChangeToTable(AccessibleTableModelChange e) {
-
-        int rowId = e.getFirstRow();
-        //TableColumnModel  columnModel = (TableColumnModel) e.getFirstColumn();
-       // String columnName = columnModel.
-        //String columnType =
-    }
     private void searchButton() {// search for information in database
-
-
-            searchButton.updateUI();
+        db.searchDoll();
+        searchButton.updateUI();
     }
 }
 
