@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="6182fd12-a4b9-48df-819a-8bdfc5b5b41a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alicia/DollDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alicia/DollDatabase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alicia/DollGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alicia/DollGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -161,7 +160,8 @@
       <workItem from="1576169399978" duration="29750000" />
       <workItem from="1576382911725" duration="243000" />
       <workItem from="1576526200815" duration="1369000" />
-      <workItem from="1576535770386" duration="16344000" />
+      <workItem from="1576535770386" duration="16593000" />
+      <workItem from="1576561802819" duration="2267000" />
     </task>
     <task id="LOCAL-00001" summary="Creating final project">
       <created>1575389670964</created>
@@ -345,7 +345,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576551025852</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Final project is finished. I did add more codes to the search button and Doll file.">
+      <created>1576553606518</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1576553606518</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -359,7 +366,8 @@
     <MESSAGE value="Doll database application is almost completed. I updated search button." />
     <MESSAGE value="Final project is partially done.   I did add more codes to the search button." />
     <MESSAGE value="Final project is partially done.   I did add more codes to the search button and Doll file." />
-    <option name="LAST_COMMIT_MESSAGE" value="Final project is partially done.   I did add more codes to the search button and Doll file." />
+    <MESSAGE value="Final project is finished. I did add more codes to the search button and Doll file." />
+    <option name="LAST_COMMIT_MESSAGE" value="Final project is finished. I did add more codes to the search button and Doll file." />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="70" width="814" height="732" key="#Intentions" timestamp="1575427031295">
@@ -394,38 +402,38 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="95" y="147" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/0.0.1536.824@0.0.1536.824" timestamp="1576196262131" />
-    <state x="375" y="6" key="CommitChangelistDialog2" timestamp="1576551025015">
+    <state x="375" y="6" key="CommitChangelistDialog2" timestamp="1576553605718">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="375" y="6" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1576551025015" />
+    <state x="375" y="6" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1576553605718" />
     <state x="254" y="153" key="FileChooserDialogImpl" timestamp="1575576871023">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="254" y="153" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1575576871023" />
-    <state width="1493" height="71" key="GridCell.Tab.0.bottom" timestamp="1576206808287">
+    <state width="1493" height="255" key="GridCell.Tab.0.bottom" timestamp="1576564040131">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="71" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1576206808287" />
-    <state width="1493" height="71" key="GridCell.Tab.0.center" timestamp="1576206808286">
+    <state width="1493" height="255" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1576564040131" />
+    <state width="1493" height="255" key="GridCell.Tab.0.center" timestamp="1576564040131">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="71" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1576206808286" />
-    <state width="1493" height="71" key="GridCell.Tab.0.left" timestamp="1576206808286">
+    <state width="1493" height="255" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1576564040131" />
+    <state width="1493" height="255" key="GridCell.Tab.0.left" timestamp="1576564040131">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="71" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1576206808286" />
-    <state width="1493" height="71" key="GridCell.Tab.0.right" timestamp="1576206808287">
+    <state width="1493" height="255" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1576564040131" />
+    <state width="1493" height="255" key="GridCell.Tab.0.right" timestamp="1576564040131">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="71" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1576206808287" />
+    <state width="1493" height="255" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1576564040131" />
     <state x="277" y="54" key="SettingsEditor" timestamp="1576526309214">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="277" y="54" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1576526309214" />
-    <state x="361" y="133" key="Vcs.Push.Dialog.v2" timestamp="1576551027725">
+    <state x="361" y="133" key="Vcs.Push.Dialog.v2" timestamp="1576553608005">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="133" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1576551027725" />
+    <state x="361" y="133" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1576553608005" />
     <state x="129" y="47" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1575419238259">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
