@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6182fd12-a4b9-48df-819a-8bdfc5b5b41a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Doll.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/alicia/Doll.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dolls.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/dolls.sqlite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alicia/DollDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alicia/DollDatabase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alicia/DollGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alicia/DollGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alicia/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alicia/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Doll.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -165,7 +161,7 @@
       <workItem from="1576169399978" duration="29750000" />
       <workItem from="1576382911725" duration="243000" />
       <workItem from="1576526200815" duration="1369000" />
-      <workItem from="1576535770386" duration="4834000" />
+      <workItem from="1576535770386" duration="8508000" />
     </task>
     <task id="LOCAL-00001" summary="Creating final project">
       <created>1575389670964</created>
@@ -314,7 +310,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576204542575</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Final project is partially done.   I did add more codes to the search button.">
+      <created>1576541317714</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1576541317714</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -326,7 +329,8 @@
     <MESSAGE value="Partially completed final project." />
     <MESSAGE value="Partially completed final project with README.md." />
     <MESSAGE value="Doll database application is almost completed. I updated search button." />
-    <option name="LAST_COMMIT_MESSAGE" value="Doll database application is almost completed. I updated search button." />
+    <MESSAGE value="Final project is partially done.   I did add more codes to the search button." />
+    <option name="LAST_COMMIT_MESSAGE" value="Final project is partially done.   I did add more codes to the search button." />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="70" width="814" height="732" key="#Intentions" timestamp="1575427031295">
@@ -341,10 +345,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="6" y="64" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1575419250405" />
-    <state x="574" y="127" key="#com.intellij.ide.util.MemberChooser" timestamp="1576538910025">
+    <state x="574" y="127" key="#com.intellij.ide.util.MemberChooser" timestamp="1576542084060">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="574" y="127" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1576538910025" />
+    <state x="574" y="127" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1576542084060" />
     <state x="121" y="187" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1575353984657">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -357,10 +361,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="95" y="147" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/0.0.1536.824@0.0.1536.824" timestamp="1576196262131" />
-    <state x="375" y="6" key="CommitChangelistDialog2" timestamp="1576204541522">
+    <state x="375" y="6" key="CommitChangelistDialog2" timestamp="1576541316441">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="375" y="6" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1576204541522" />
+    <state x="375" y="6" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1576541316441" />
     <state x="254" y="153" key="FileChooserDialogImpl" timestamp="1575576871023">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -385,10 +389,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="277" y="54" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1576526309214" />
-    <state x="361" y="133" key="Vcs.Push.Dialog.v2" timestamp="1576204548624">
+    <state x="361" y="133" key="Vcs.Push.Dialog.v2" timestamp="1576541337551">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="133" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1576204548624" />
+    <state x="361" y="133" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1576541337551" />
     <state x="129" y="47" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1575419238259">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
