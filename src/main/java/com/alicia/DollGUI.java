@@ -5,11 +5,12 @@ import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.List;
+import java.util.Objects;
 import java.util.Vector;
 
 
 /**
- * Created by Alicia on 12/12/19.
+ * Created by Alicia on 12/16/19.
  * Class JAVA 2505.
  *
  */
@@ -25,6 +26,13 @@ public class DollGUI extends JFrame {
     private JButton deleteButton;
     private DefaultTableModel tableModel;
     private DollDatabase db;
+    JTextField dollNameTextField;
+    JLabel nameLabel;
+    JTextField typeTextField;
+    JLabel typeLabel;
+    JTextField resultTextField;
+    JButton clearButton;
+
 
     DollGUI(DollDatabase db) {//constructor called DollGUI contains DollDatabase parameter
 
@@ -66,36 +74,36 @@ public class DollGUI extends JFrame {
 
         searchButton.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e) {
+           public void actionPerformed(ActionEvent e) {
 
-             String searchNInput = JOptionPane.showInputDialog(DollGUI.this, "Enter doll name",
-                     "Find doll name ", JOptionPane.INFORMATION_MESSAGE);//showing search message to user
-                List<String> same = db.search(searchNInput);//search string name and store in same variable
+          String searchNInput = JOptionPane.showInputDialog(DollGUI.this, "Enter doll name",
+              "Find doll name " , JOptionPane.INFORMATION_MESSAGE) ;
 
-                if (same.isEmpty()) {//checking for doll name in database
-                    resultLabel.setText(" No doll names found" + same);//display no doll names by this name exist
-                }else {
-                    resultLabel.setText("List of matching doll names found:"); //display found names
-                    for (String dollName : same) {//checking each name in database
-                        resultLabel.setText(dollName);// looking for doll name
-                    }
-                }
+          String searchTInput = JOptionPane.showInputDialog(DollGUI.this, "Enter doll type ",
+                       "Find doll type", JOptionPane.INFORMATION_MESSAGE);
+          List<String> same = db.searchDoll(searchNInput,searchTInput);
 
-                String searchTInput = JOptionPane.showInputDialog(DollGUI.this, "Enter doll type ",
-                     "Find doll type",JOptionPane.INFORMATION_MESSAGE);
-                List<String> alike = db.search(searchTInput);
-
-                 if (alike.isEmpty()) {
-                     resultLabel.setText("No doll types found" + alike);
-                 }else {
-                     resultLabel.setText(("List of matching doll types found:"));
-                     for (String dollType: alike) {
-                         resultLabel.setText(dollType);
-                     }
-                     searchButton();//call search button to retrieve doll types
-                }
+               if (same.isEmpty()) {//checking for doll name in database
+                 resultLabel.setText(" No doll names found" + same);//display no doll names by this name exist
+               }else {
+                   resultLabel.setText("List of matching doll names found:"); //display found names
+                   for (String dollName : same) {//checking each name in database
+                       resultLabel.setText(dollName);// looking for doll name
+                 }
             }
-        });
+
+               String[] alike = new String[0];
+               if (Objects.equals(alike, this)) {
+                   resultLabel.setText(("List of matching doll types found:"));
+                  for (String dollType: alike) {
+                      resultLabel.setText(dollType);
+                  }   searchButton();//call search button to retrieve doll types
+              } else {
+                   resultLabel.setText("No doll types found" + alike);
+                }
+           }
+
+       });
 
         doneButton.addActionListener(new ActionListener() {
             @Override
@@ -156,7 +164,7 @@ public class DollGUI extends JFrame {
     }
 
     private void searchButton() {// search for information in database
-        db.searchDoll();
+        //db.searchDoll();
         searchButton.updateUI();
     }
 }

@@ -8,7 +8,6 @@ It is an user-friendly application where doll lovers can explore and learn more 
 * Search button
 * Add button
 * Update button
-* Clear button
 * Delete button
 * Done button
 

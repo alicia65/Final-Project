@@ -15,8 +15,12 @@ import static input.InputUtils.stringInput;
 public class DollDatabase {
 
     private static final String DB_CONNECTION_URL = "jdbc:sqlite:dolls.sqlite";//connect to url
+    private Object Doll;
+    private Object List;
 
-    DollDatabase() {
+    DollDatabase(Object doll, Object list) {
+        Doll = doll;
+        List = list;
 
         try (Connection connection = DriverManager.getConnection(DB_CONNECTION_URL);
              Statement statement = connection.createStatement()) {
@@ -73,7 +77,7 @@ public class DollDatabase {
         }
     }
 
-    public void searchDoll(String searchNInput, String searchTInput) {//Using search button to search for dolls in database
+    public <Doll> java.util.List<Doll> searchDoll(String searchNInput, String searchTInput) {//Using search button to search for dolls in database
 
         String findSql = "SELECT * FROM dolls WHERE equalsIgnorcase(name, type) like equalsIgnorecase(? ,?)";
 
@@ -87,14 +91,16 @@ public class DollDatabase {
             preparedStatement.setString(2, "%" + findType + "%");
             ResultSet dollsRs = preparedStatement.executeQuery();
 
-            List<String> dolls = new ArrayList<>();//Creating array list to save doll names and types
+            List<Doll> dolls = new ArrayList<>();//Creating array list to save doll names and types
 
             while (dollsRs.next()) {//getting next doll while true
                 String name = dollsRs.getString("name"); //Getting string name and sending via result set
                 String type = dollsRs.getString("type");
-                String doll = new String(name, type);
+                Doll doll = new Doll(name, type);
                 dolls.add(doll);//adding found dolls to doll list
             }
+
+            return dolls;//return all dolls
 
         }catch(SQLException e){
             throw  new RuntimeException(e);

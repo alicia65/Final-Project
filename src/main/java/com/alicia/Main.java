@@ -8,14 +8,14 @@ package com.alicia;
  * to navigate while using the application.
   */
 
-import java.util.Vector;
-
 import static input.InputUtils.stringInput;
 public class Main {
 
     public static void main(String[] args) {
         // write your code here
-        DollDatabase db = new DollDatabase();
+        Object list = null;
+        Object doll = null;
+        DollDatabase db = new DollDatabase(doll, list);
         DollGUI gui = new DollGUI(db);
     }
 }
