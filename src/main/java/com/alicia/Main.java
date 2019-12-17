@@ -11,12 +11,12 @@ package com.alicia;
 import static input.InputUtils.stringInput;
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) {//main method is a starting point of the program.
         // write your code here
         Object list = null;
         Object doll = null;
-        DollDatabase db = new DollDatabase(doll, list);
-        DollGUI gui = new DollGUI(db);
+        DollDatabase db = new DollDatabase(doll, list);// creating new object doll data base to call two parameters: doll and list.
+        DollGUI gui = new DollGUI(db);// creating object DollGUI to communicate with data base.
     }
 }
 

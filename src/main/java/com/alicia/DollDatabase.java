@@ -77,7 +77,7 @@ public class DollDatabase {
         }
     }
 
-    public <Doll> java.util.List<Doll> searchDoll(String searchNInput, String searchTInput) {//Using search button to search for dolls in database
+    public <Doll> java.util.List<Doll> searchDoll() {//Using search button to search for dolls in database
 
         String findSql = "SELECT * FROM dolls WHERE equalsIgnorcase(name, type) like equalsIgnorecase(? ,?)";
 

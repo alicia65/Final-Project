@@ -46,42 +46,44 @@ public class DollGUI extends JFrame {
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);//disconnect the program by shutting off this window
         configureTable();//calling table to modify
 
-        addButton.addActionListener(new ActionListener() {
+        addButton.addActionListener(new ActionListener() {// add button will listen to chick of keyboard
             @Override
             public void actionPerformed(ActionEvent e) {
 
                 String dollNameInput = JOptionPane.showInputDialog(DollGUI.this,
-                        "Enter the doll name", "Add doll name", JOptionPane.INFORMATION_MESSAGE);
+                        "Enter the doll name", "Add doll name", JOptionPane.INFORMATION_MESSAGE);// Message asks
+                //user to enter information
 
-                if (dollNameInput.trim().length()== 0){
-                        resultLabel.setText("Doll name is");
-                        return;
+                if (dollNameInput.trim().length()== 0){//display message if user did not response
+                        resultLabel.setText("Doll name is");// Prompt user to enter doll name
+                        return;//return if user did not answer
                     }
 
                 String dollTypeInput = JOptionPane.showInputDialog(DollGUI.this,
-                            "Enter the doll type", "Add doll type", JOptionPane.INFORMATION_MESSAGE);
+                            "Enter the doll type", "Add doll type", JOptionPane.INFORMATION_MESSAGE);//Requesting user to supply
+                // information about adding doll type to data base
 
                 if (dollTypeInput.trim().length()== 0) {
                         resultLabel.setText(" Doll type is");
                         return;
                     }
 
-                addNewDolls(dollNameInput, dollTypeInput);
-                displayAllDolls();
-                db.searchDoll(dollNameInput, dollTypeInput);
+                addNewDolls(dollNameInput, dollTypeInput);// Method which calling string inputs from user to add new dolls
+                displayAllDolls();//print and update dolls
+                db.searchDoll();//search query of dolls from data base
             }
         });
 
-        searchButton.addActionListener(new ActionListener() {
+        searchButton.addActionListener(new ActionListener() {//listening for search button
             @Override
            public void actionPerformed(ActionEvent e) {
 
           String searchNInput = JOptionPane.showInputDialog(DollGUI.this, "Enter doll name",
-              "Find doll name " , JOptionPane.INFORMATION_MESSAGE) ;
-
+              "Find doll name " , JOptionPane.INFORMATION_MESSAGE) ;//Search for doll names by displaying text using
+               //JOptionPane which shows and enters text
           String searchTInput = JOptionPane.showInputDialog(DollGUI.this, "Enter doll type ",
                        "Find doll type", JOptionPane.INFORMATION_MESSAGE);
-          List<String> same = db.searchDoll(searchNInput,searchTInput);
+          List<String> same = db.searchDoll();
 
                if (same.isEmpty()) {//checking for doll name in database
                  resultLabel.setText(" No doll names found" + same);//display no doll names by this name exist
@@ -92,14 +94,14 @@ public class DollGUI extends JFrame {
                  }
             }
 
-               String[] alike = new String[0];
-               if (Objects.equals(alike, this)) {
-                   resultLabel.setText(("List of matching doll types found:"));
-                  for (String dollType: alike) {
-                      resultLabel.setText(dollType);
+               String[] alike = new String[0];// create and store values in string of array
+               if (Objects.equals(alike, this)) {//searching for match dolls by user requested
+                   resultLabel.setText(("List of matching doll types found:"));//Display text to user if dolls are found
+                  for (String dollType: alike) {//loop through variable alike to find add doll type
+                      resultLabel.setText(dollType);//if dolls are found, sent to resultLabel to display doll types
                   }   searchButton();//call search button to retrieve doll types
               } else {
-                   resultLabel.setText("No doll types found" + alike);
+                   resultLabel.setText("No doll types found" + alike);//if no dolls found, print this message
                 }
            }
 
@@ -164,8 +166,8 @@ public class DollGUI extends JFrame {
     }
 
     private void searchButton() {// search for information in database
-        //db.searchDoll();
-        searchButton.updateUI();
+        db.searchDoll();// search in data base for dolls
+        searchButton.updateUI();//update search button for new information
     }
 }
 
