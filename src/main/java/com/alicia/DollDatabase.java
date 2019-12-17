@@ -15,12 +15,8 @@ import static input.InputUtils.stringInput;
 public class DollDatabase {
 
     private static final String DB_CONNECTION_URL = "jdbc:sqlite:dolls.sqlite";//connect to url
-    private Object Doll;
-    private Object List;
 
     DollDatabase(Object doll, Object list) {
-        Doll = doll;
-        List = list;
 
         try (Connection connection = DriverManager.getConnection(DB_CONNECTION_URL);
              Statement statement = connection.createStatement()) {
@@ -77,17 +73,16 @@ public class DollDatabase {
         }
     }
 
-    public <Doll> java.util.List<Doll> searchDoll() {//Using search button to search for dolls in database
+    public List<Doll> searchDoll() {//Using search button to search for dolls in database
 
         String findSql = "SELECT * FROM dolls WHERE equalsIgnorcase(name, type) like equalsIgnorecase(? ,?)";
 
         try(Connection connection = DriverManager.getConnection(DB_CONNECTION_URL);
             PreparedStatement preparedStatement = connection.prepareStatement(findSql)) {
 
-            String findName = stringInput("Enter name to find");//Asking user to supple doll name for searching
-            String findType = stringInput("Enter type to find");// Getting input from user regarding to doll type
-
+            String findName = "";
             preparedStatement.setString(1, "%" + findName + "%");
+            String findType = "";
             preparedStatement.setString(2, "%" + findType + "%");
             ResultSet dollsRs = preparedStatement.executeQuery();
 
@@ -150,6 +145,7 @@ public class DollDatabase {
              System.err.println("Error deleting name from dolls table because of" + sqle);
          }
      }
+
 }
 
 

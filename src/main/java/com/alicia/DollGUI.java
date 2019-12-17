@@ -83,14 +83,14 @@ public class DollGUI extends JFrame {
                //JOptionPane which shows and enters text
           String searchTInput = JOptionPane.showInputDialog(DollGUI.this, "Enter doll type ",
                        "Find doll type", JOptionPane.INFORMATION_MESSAGE);
-          List<String> same = db.searchDoll();
+          List<Doll> same = db.searchDoll();
 
                if (same.isEmpty()) {//checking for doll name in database
                  resultLabel.setText(" No doll names found" + same);//display no doll names by this name exist
                }else {
                    resultLabel.setText("List of matching doll names found:"); //display found names
-                   for (String dollName : same) {//checking each name in database
-                       resultLabel.setText(dollName);// looking for doll name
+                   for (Doll dollName : same) {//checking each name in database
+                       resultLabel.setText(String.valueOf(dollName));// looking for doll name
                  }
             }
 
@@ -166,6 +166,8 @@ public class DollGUI extends JFrame {
     }
 
     private void searchButton() {// search for information in database
+        Doll findType = null;
+        String findName = null;
         db.searchDoll();// search in data base for dolls
         searchButton.updateUI();//update search button for new information
     }
