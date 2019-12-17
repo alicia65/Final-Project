@@ -111,32 +111,32 @@ public class DollDatabase {
 
         Vector<String> colTerms = new Vector<>();//creating vector to save three columns
 
-        colTerms.add("ID");
-        colTerms.add("name");
+        colTerms.add("ID");//add id to vector
+        colTerms.add("name");//add name to vector
         colTerms.add("type");
 
-        return colTerms;
+        return colTerms;//return variable called colTerms
      }
 
      public void updateDoll(String name, String type) {//update database after making changes
 
         String sql = "UPDATE dolls SET type = ? WHERE name = ?";//Update changes in database
 
-         try (Connection connection = DriverManager.getConnection(DB_CONNECTION_URL);
+         try (Connection connection = DriverManager.getConnection(DB_CONNECTION_URL);// connect to URL
               PreparedStatement preparedStatement = connection.prepareStatement(sql)) {//protecting database for getting destroy
              //database
 
-             preparedStatement.setString(1, type);
+             preparedStatement.setString(1, type);//protect type for unwanted visitors and assign to location # 1
              preparedStatement.setString(2, name);
 
-             preparedStatement.executeUpdate();
+             preparedStatement.executeUpdate();//go get doll name and type
 
-         }catch (SQLException sqle) {
+         }catch (SQLException sqle) {//checking for sqle
              System.err.println("Error updating doll DB table for doll" + name + type + "because" + sqle);
          }
      }
 
-     public void delete(String name) {
+     public void delete(String name) {// delete method delete doll name
 
          String dsql = "DELETE FROM dolls WHERE name = ?";//sql delete command removes doll name from doll table.
 
